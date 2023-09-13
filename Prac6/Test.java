@@ -7,6 +7,8 @@ import java.util.List;
 public class Test {
     public static void main(String[] agrs) {
 
+        System.out.println("Test");
+
         List<Student> students = new ArrayList<>(Arrays.asList(new Student(5), new Student(2), new Student(1), new Student(8)));
         students = sortStudents(students);
         for (Student student : students) {
