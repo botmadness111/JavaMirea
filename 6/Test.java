@@ -1,19 +1,21 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Test {
     public static void main(String[] agrs) {
+
         List<Student> students = new ArrayList<>(Arrays.asList(new Student(5), new Student(2), new Student(1), new Student(8)));
         students = sortStudents(students);
         for (Student student : students) {
             System.out.printf(student.idNumber + " ");
         }
 
+        System.out.println("\n ");
+
         // --------2--------
         students = new ArrayList<>(Arrays.asList(new Student(5, 2), new Student(2, 5), new Student(1, 3), new Student(8, 2)));
-
-
+        SortingStudentsByGPA sortingStudent = new SortingStudentsByGPA();
+        sortingStudent.quickSort(students, 0, students.size());
+        System.out.println(students);
     }
 
     private static List<Student> sortStudents(List<Student> students) {
@@ -39,7 +41,7 @@ public class Test {
                 }
             }
         }
-        students = List.of(sortedStudents);
+        students = Arrays.stream(sortedStudents).toList();
         return students;
 //        for (Student student : sortedStudents) {
 //            System.out.printf(student.idNumber + " ");
