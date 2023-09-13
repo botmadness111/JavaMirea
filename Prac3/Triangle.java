@@ -1,3 +1,5 @@
+package Prac3;
+
 public class Triangle extends Shape {
 
     @Override

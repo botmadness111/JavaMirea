@@ -1,3 +1,5 @@
+package Prac3;
+
 public class MovableRectangle implements Movable {
     private MovablePoint leftBot;
     private MovablePoint rightTop;

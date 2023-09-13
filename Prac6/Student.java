@@ -1,4 +1,4 @@
-package test;
+package Prac6;
 
 public class Student implements Comparable<Student> {
     int idNumber = 0;
