@@ -1,3 +1,5 @@
+package test;
+
 public class Student implements Comparable<Student> {
     int idNumber = 0;
     int ball = 0;
