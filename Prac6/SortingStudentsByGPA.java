@@ -1,5 +1,7 @@
 package Prac6;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -39,6 +41,49 @@ public class SortingStudentsByGPA implements Comparator<Student> {
         }
         return placeMediana;
     }
+
+    public List<Student> mergeSort(List<Student> list) {
+        if (list.size() == 1) return list;
+
+        List<Student> arrayOne = list.subList(0, list.size() / 2);
+        List<Student> arrayTwo = list.subList(list.size() / 2, list.size());
+
+        arrayOne = mergeSort(arrayOne);
+        arrayTwo = mergeSort(arrayTwo);
+
+        list = joinArrays(arrayOne, arrayTwo);
+        return list;
+    }
+
+    private List<Student> joinArrays(List<Student> arrayOne, List<Student> arrayTwo) {
+        List<Student> result = new ArrayList<>();
+        int i = 0;
+        int j = 0;
+        while (i < arrayOne.size() && j < arrayTwo.size()) {
+            Student stud1 = arrayOne.get(i);
+            Student stud2 = arrayTwo.get(j);
+
+            int type = compare(stud1, stud2);
+            if (type == -1) {
+                result.add(stud1);
+                i++;
+            } else {
+                result.add(stud2);
+                j++;
+            }
+
+        }
+        while (i != arrayOne.size()) {
+            result.add(arrayOne.get(i));
+            i++;
+        }
+        while (j != arrayTwo.size()) {
+            result.add(arrayTwo.get(j));
+            j++;
+        }
+        return result;
+    }
+
 
     @Override
     public int compare(Student o1, Student o2) {
