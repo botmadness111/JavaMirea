@@ -1,8 +1,6 @@
 package Prac6;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Test {
     public static void main(String[] agrs) {
@@ -50,7 +48,8 @@ public class Test {
                 }
             }
         }
-        students = Arrays.stream(sortedStudents).toList();
+        students.clear();
+        Collections.addAll(students, sortedStudents);
         return students;
 //        for (Student student : sortedStudents) {
 //            System.out.printf(student.idNumber + " ");
