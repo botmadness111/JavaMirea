@@ -33,10 +33,8 @@ public class Solution {
 
         System.out.println("\n");
 
-        Scanner scan = new Scanner(System.in);
-        for (i = 0; i < 3; i++) {
-            String arg = scan.next();
-            System.out.printf(arg + " ");
+        for (i = 0; i < args.length; i++) {
+            System.out.printf(args[i] + " ");
         }
 
         System.out.println("\n");
